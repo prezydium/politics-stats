@@ -1,6 +1,6 @@
 import requests
 import analyzer
-
+import pandas
 
 print("Welcome to the word of polish politics")
 
@@ -15,3 +15,5 @@ for web in list_of_webpages:
 
 for k, v in result.items():
     print(k, v)
+wr = pandas.DataFrame.from_dict(result)
+wr.to_csv("statistics.csv")
